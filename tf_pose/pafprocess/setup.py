@@ -5,10 +5,10 @@ import os
 # os.environ['CC'] = 'g++';
 setup(name='pafprocess_ext', version='1.0',
     ext_modules=[
-        Extension('_pafprocess', ['/content/drive/My Drive/Colab Notebooks/BioMec/tf_pose/pafprocess/pafprocess.cpp', '/content/drive/My Drive/Colab Notebooks/BioMec/tf_pose/pafprocess/pafprocess.i'],
+        Extension('_pafprocess', ['pafprocess.cpp', 'pafprocess.i'],
                   swig_opts=['-c++'],
-                  depends=["/content/drive/My Drive/Colab Notebooks/BioMec/tf_pose/pafprocess/pafprocess.h"],
-                  include_dirs=[numpy.get_include(), '/content/drive/My Drive/Colab Notebooks/BioMec/tf_pose/pafprocess/'])
+                  depends=["pafprocess.h"],
+                  include_dirs=[numpy.get_include(), '/pafprocess/'])
     ],
     py_modules=[
         "pafprocess"
