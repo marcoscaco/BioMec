@@ -18,11 +18,11 @@ logger.addHandler(ch)
 
 parser = argparse.ArgumentParser(description='tf-pose-estimation run')
 parser.add_argument('--image', type=str, default='./data/img/p1.jpg')
-parser.add_argument('--model', type=str, default='cmu', help='cmu / mobilenet_thin')
+parser.add_argument('--model', type=str, default='mobilenet_thin', help='cmu / mobilenet_thin')
 
 parser.add_argument('--resize', type=str, default='432x368',
                         help='if provided, resize images before they are processed. default=432x368, Recommends : 432x368 or 656x368 or 1312x736 ')
-parser.add_argument('--resize-out-ratio', type=float, default=1.0,
+parser.add_argument('--resize-out-ratio', type=float, default=4.0,
                         help='if provided, resize heatmaps before they are post-processed. default=1.0')
 
 args = parser.parse_args()
